@@ -20,13 +20,7 @@ router.get('/new-or-renew', function (req, res) {
 });
 
 router.post('/new-or-renew', function (req, res) {
-  const newOrRenew = req.session.data['newOrRenew']
-
-  if (newOrRenew == 'Yes, renew my juggling license'){
-    res.redirect('renew-confirm-details')
-  } else{
     res.redirect('colour')
-  }
 });
 
 router.get('/colour', function (req, res) {
