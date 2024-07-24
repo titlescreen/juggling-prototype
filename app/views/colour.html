@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="colour" method="post" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="colour-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What colour balls can you juggle with
+              </h1>
+            </legend>
+            <div id="colour-hint" class="govuk-hint">
+              Select all that apply.
+            </div>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="colour" name="colour" type="checkbox" value="Blue" {{ checked("colour", "Blue") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="colour">
+                  Blue
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="colour-2" name="colour" type="checkbox" value="Pink" {{ checked("colour", "Pink") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="colour-2">
+                  Pink
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="colour-3" name="colour" type="checkbox" value="Orange" {{ checked("colour", "Orange") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="colour-3">
+                  Orange
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="colour-4" name="colour" type="checkbox" value="Yellow" {{ checked("colour", "Yellow") }}>
+                <label class="govuk-label govuk-checkboxes__label" for="colour-4">
+                  Yellow
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

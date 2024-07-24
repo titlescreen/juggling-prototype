@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="new-or-renew" method="post" novalidate>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you need to renew your juggling license {{data['name']}}?
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="newOrRenew" name="newOrRenew" type="radio" value="Yes, renew my juggling license" {{ checked("newOrRenew", "Yes, renew my juggling license") }}>
+                <label class="govuk-label govuk-radios__label" for="newOrRenew">
+                  Yes, renew my juggling license
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="newOrRenew-2" name="newOrRenew" type="radio" value="No, I'm applying for my first juggling license" {{ checked("newOrRenew", "No, I'm applying for my first juggling license") }}>
+                <label class="govuk-label govuk-radios__label" for="newOrRenew-2">
+                  No, I'm applying for my first juggling license
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
